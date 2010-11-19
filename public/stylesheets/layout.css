@@ -12,7 +12,11 @@
   width: 100%;
   overflow: hidden;
 }
-#container #header_container { background: #a4ed55; }
+#container #header_container {
+  background: #444444;
+  color: #efefef;
+}
+#container #header_container a { color: orange; }
 #container #header_container #header {
   width: 80%;
   height: 38px;
@@ -26,7 +30,7 @@
   font-weight: bold;
   font-size: 1.2em;
   text-decoration: none;
-  color: #003300;
+  color: #efefef;
 }
 #container #header_container #header #logo small {
   display: inline;
