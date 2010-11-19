@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  food_id: 1
+  brand_id: 1
+  consumer: MyString
+  producer: MyString
+
+two:
+  food_id: 1
+  brand_id: 1
+  consumer: MyString
+  producer: MyString

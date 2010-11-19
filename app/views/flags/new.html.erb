@@ -1,0 +1,8 @@
+<h2>Mark this entry as spam or inappropriate?</h2>
+
+<p><em><%= description_without_links_for(@entry) %></em></p>
+
+<% form_for [@entry, Flag.new] do |f| %>
+  <%= submit_tag "Yes" %>
+  <%= submit_tag "No", :name => "cancel" %>
+<% end %>

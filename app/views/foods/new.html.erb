@@ -1,0 +1,11 @@
+<% form_for @food do |f| %>
+  <p>
+    <%= f.label :consumer, 'Consumer' %><br />
+    <%= f.country_select :consumer %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p><%= f.submit "Create" %></p>
+<% end %>

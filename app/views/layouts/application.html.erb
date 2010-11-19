@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>Where's your food from? Your local area? Your country? Your continent?</title>
+    <meta name="keywords" content="<%= yield(:keywords) || "Where's your food from? Your local area? Your country? Your contintent?" %>" />
+    <meta name="description" content="<%= yield(:description) || "" %>" />
+    <meta name="robots" content="index,follow" />
+    <%= include_stylesheets :common,  :media => 'all' %>
+    <%= include_javascripts :common %>
+    <%= yield :includes %>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1544972-5']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+  </head>
+  <body> 
+    <div id="container">
+      <%= render :partial => 'layouts/header' %>
+      <div id="content">
+        <%= yield %>
+      </div>
+      <div id="footer">
+        <p><%= link_to 'View entries marked as spam/inappropriate', flagged_entries_path %></p>
+        <small>Developed by <%= link_to 'Cilliano', 'http://cilliano.com' %>, disclaimer: no responsibility is accepted for any inappropriate/offensive entries submitted, please delete any inappropriate entries.</small>
+      </div>
+    </div>           
+  </body>
+</html>

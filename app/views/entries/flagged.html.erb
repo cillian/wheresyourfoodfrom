@@ -1,0 +1,7 @@
+<h1>Entries marked as spam/inappropriate</h1>
+
+<div id="flagged_entries">
+  <% @flagged_entries.each do |entry| %>
+    <p><%= description_without_links_for(entry) %>, <em>flagged <%= time_ago_in_words(entry.flags.last.created_at) %> ago.</em></p>
+  <% end %>
+</div>

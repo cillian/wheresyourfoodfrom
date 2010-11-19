@@ -1,0 +1,35 @@
+<h1>So where's your food from?</h1>
+
+<% form_for @entry do |f| %>
+
+  <%= f.error_messages %>
+
+  <p>
+    <% f.fields_for :food do |food_form| %>
+      <%= food_form.label :name, 'What food/drink do you have?' %><br />
+      <%= food_form.text_field :name %>
+    <% end %>
+  </p> 
+
+  <p>
+    <%= f.label :consumer_id, 'Where are you?' %><br />
+    <%= f.select :consumer_id, @countries.collect { |c| [c.name, c.id] }, {:prompt => 'Select a country'} %>
+  </p>
+
+  <p>
+    <%= f.label :producer_id, 'Where was it produced?' %><br />
+    <%= f.select :producer_id, @countries.collect { |c| [c.name, c.id] }, {:prompt => 'Select a country'} %>
+  </p>
+
+  <p> 
+    <% f.fields_for :brand do |brand_form| %>
+      <%= brand_form.label :name, 'What brand is it?' %><br />
+      <%= brand_form.text_field :name %>
+    <% end %> 
+  </p>
+
+  <p>
+    <%= f.submit "Add entry" %>
+  </p>
+    
+<% end %>

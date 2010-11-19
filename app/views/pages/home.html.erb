@@ -1,0 +1,31 @@
+<% content_for :includes do %>
+  <%= include_stylesheets :home %>
+  <%= include_javascripts :home %>
+<% end %>
+
+<h1>Where's your food from?</h1>
+<h2 id="subheading">Your local area, your country, your continent?</h2>
+
+<table id="entries">
+  <% @entries.each do |entry| %>
+    <% content_tag_for(:tr, entry) do %>
+      <td class="created_at">
+        <%= time_ago_in_words(entry.created_at) %> ago
+      </td>
+      <td class="description">
+        <%= description_for(entry) %>
+      </td>
+      <td class="spam">
+        <%= link_to "(x)", new_entry_flag_path(entry), :rel => "nofollow", :title => 'Delete spam/inappropriate entry', :class => 'flag_entry' %>
+      </td>
+    <% end %>
+  <% end %>
+</table>
+
+<br />
+
+<%= will_paginate @entries %>
+
+<br />
+
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>

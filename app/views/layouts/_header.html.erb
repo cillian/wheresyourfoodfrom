@@ -1,0 +1,16 @@
+<div id="header_container">
+  <div id="header">
+   <%= link_to 'WheresYourFoodFrom<small>.heroku.com</small>', root_url, :id => 'logo' %>
+
+    <div id="nav">
+      <%= link_to 'Tell us where your food is from...', new_entry_path %>
+
+      or see what food is going in and out of your country:
+
+      <% form_tag('/countries/post_redirect', :method => 'post', :id => 'select_country_form') do %>
+        <%= select("country", "id", Country.all.collect {|c| [ c.name, country_url(c.id) ] }, {:prompt => 'Select your country'}) %>
+        <%= submit_tag "Go" %>
+      <% end %>
+    </div>
+  </div>
+</div>

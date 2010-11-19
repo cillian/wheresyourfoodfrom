@@ -1,0 +1,31 @@
+<% content_for :includes do %>
+  <%= include_stylesheets :countries %>
+<% end %>
+
+
+
+<div id="imports_container">
+  <h1><strong><%= @country.name %></strong> is eating...</h1>
+  <table id="imports">
+    <% @country.imports.each do |entry| %>
+      <tr>
+        <td>
+          <%= link_to entry.food.name, food_path(entry.food) %> from <%= link_to entry.producer.name, countries_path(entry.producer) %> <span class="brand">(<%= entry.brand.name %>)</span>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<div id="exports_container">
+  <h1>and exporting...</h1>
+  <table id="exports">
+    <% @country.exports.each do |entry| %>
+      <tr>
+        <td>
+          <%= link_to entry.food.name, food_path(entry.food) %> to <%= link_to entry.consumer.name, countries_path(entry.consumer) %> <span class="brand">(<%= entry.brand.name %>)</span>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
