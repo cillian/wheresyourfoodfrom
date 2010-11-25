@@ -9,8 +9,16 @@
 
 
 */#imports_container { width: 45%; }
+#imports_container td {
+  font-size: 1em;
+  padding: 5px 0;
+}
 #imports_container .brand { color: #cccccc; }
 #exports_container { width: 45%; }
+#exports_container td {
+  font-size: 1em;
+  padding: 5px 0;
+}
 #exports_container .brand { color: #cccccc; }
 #imports_container { float: left; }
 #exports_container { float: right; }
