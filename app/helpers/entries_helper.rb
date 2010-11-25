@@ -10,4 +10,8 @@ module EntriesHelper
   def action_for(consumption_type)
     consumption_type == 'food' ? 'eating' : 'drinking'
   end
+
+  def past_tense_action_for(consumption_type)
+    consumption_type == 'food' ? 'eaten' : 'drunk'
+  end
 end

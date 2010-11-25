@@ -77,3 +77,17 @@ table td {
   list-style-type: disc;
   margin: 0 0 10px 20px;
 }
+#left_table_container { width: 45%; }
+#left_table_container td {
+  font-size: 1em;
+  padding: 5px 0;
+}
+#left_table_container .brand { color: #cccccc; }
+#right_table_container { width: 45%; }
+#right_table_container td {
+  font-size: 1em;
+  padding: 5px 0;
+}
+#right_table_container .brand { color: #cccccc; }
+#left_table_container { float: left; }
+#right_table_container { float: right; }

@@ -1,8 +1,4 @@
-<% content_for :includes do %>
-  <%= include_stylesheets :countries %>
-<% end %>
-
-<div id="imports_container">
+<div id="left_table_container">
   <h1><strong><%= @country.name %></strong> is eating...</h1>
   <table id="imports">
     <% @country.consumptions.each do |entry| %>
@@ -15,7 +11,7 @@
   </table>
 </div>
 
-<div id="exports_container">
+<div id="right_table_container">
   <h1>and exporting...</h1>
   <table id="exports">
     <% @country.exports.each do |entry| %>

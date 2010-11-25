@@ -1,6 +1,8 @@
 class Food < ActiveRecord::Base
   has_many :entries
   has_many :brands, :through => :entries
+  has_many :producers, :through => :entries
+  has_many :consumers, :through => :entries
   
   validates_presence_of :name
   validates_uniqueness_of :name

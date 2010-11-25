@@ -1,0 +1,25 @@
+<div id="left_table_container">
+  <h1><strong><%= @food.name %></strong> produced in...</h1>
+  <table id="imports">
+    <% @food.entries.each do |entry| %>
+      <tr>
+        <td>
+          <%= link_to entry.producer.name, country_path(entry.producer) %> by <%= entry.brand.name %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<div id="right_table_container">
+  <h1>is <%= past_tense_action_for(@food.consumption_type) %> in...</h1>
+  <table id="exports">
+    <% @food.entries.each do |entry| %>
+      <tr>
+        <td>
+          <%= link_to entry.consumer.name, country_path(entry.consumer) %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

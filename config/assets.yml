@@ -20,7 +20,5 @@ stylesheets:
     - public/stylesheets/layout.css
   home:
     - public/stylesheets/home.css
-  countries:
-    - public/stylesheets/countries/show.css
 
 templates:
