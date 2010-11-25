@@ -17,4 +17,14 @@ describe Food do
     food.name = existing_food.name
     food.should_not be_valid
   end
+
+  it "is not valid without a consumption type" do
+    food.consumption_type = nil
+    food.should_not be_valid
+  end
+
+  it "is not valid if its type is not food or drink" do
+    food.consumption_type = 'nonsense'
+    food.should_not be_valid
+  end
 end

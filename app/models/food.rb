@@ -4,6 +4,7 @@ class Food < ActiveRecord::Base
   
   validates_presence_of :name
   validates_uniqueness_of :name
+  validates_inclusion_of :consumption_type, :in => %w(drink food)
 
   HUMANIZED_ATTRIBUTES = { :name => "Food/Drink name" }
 

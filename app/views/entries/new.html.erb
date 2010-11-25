@@ -4,12 +4,22 @@
 
   <%= f.error_messages %>
 
-  <p>
-    <% f.fields_for :food do |food_form| %>
-      <%= food_form.label :name, 'What food/drink do you have?' %><br />
+  <% f.fields_for :food do |food_form| %>
+
+    <p>
+      <%= food_form.label :name, 'What are you eating/drinking?' %><br />
       <%= food_form.text_field :name %>
-    <% end %>
-  </p> 
+    </p>
+    
+    <p>
+      Is that a food or drink?<br />
+      <%= food_form.radio_button :consumption_type, 'food' %>
+      <%= food_form.label :consumption_type_food, "Food" %><br />
+      <%= food_form.radio_button :consumption_type, 'drink' %>
+      <%= food_form.label :consumption_type_drink, "Drink" %>
+    </p> 
+
+  <% end %>
 
   <p>
     <%= f.label :consumer_id, 'Where are you?' %><br />

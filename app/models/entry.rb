@@ -13,7 +13,8 @@ class Entry < ActiveRecord::Base
   named_scope :unflagged, :conditions => 'NOT EXISTS (SELECT id FROM flags WHERE entries.id = entry_id)', :order => 'created_at DESC'
 
   def food_attributes=(attributes)
-    self.food = Food.find_or_create_by_name(attributes[:name])
+    self.food = Food.find_by_name(attributes[:name])
+    self.food ||= Food.create!(attributes)
   end
   
   def brand_attributes=(attributes)

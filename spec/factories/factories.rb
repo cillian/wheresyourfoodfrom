@@ -7,6 +7,7 @@ end
 
 Factory.define :food do |f|
   f.sequence(:name) {|n| "foodname#{n}" }
+  f.consumption_type 'food'
 end
 
 Factory.define :brand do |f|

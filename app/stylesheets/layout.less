@@ -64,6 +64,29 @@ table {
     display: inline-block;
   }
 }
-.errorExplanation {
+
+/* */
+
+#flash, 
+#flash_notice {
+  color: #0B0;
+}
+ 
+#flash_error {
+  color: #C33;
+}
+ 
+.fieldWithErrors {
+  display:inline;
+  clear:both;
+}
+ 
+.errorExplanation,
+#errorExplanation {
   color: #900;
+  clear: both;
+}
+#errorExplanation ul li {
+  list-style-type: disc;
+  margin: 0 0 10px 20px;
 }

@@ -63,4 +63,17 @@ table td {
   display: inline-block;
 }
 #select_country_form select { display: inline-block; }
-.errorExplanation { color: #990000; }
+#flash, #flash_notice { color: #00bb00; }
+#flash_error { color: #cc3333; }
+.fieldWithErrors {
+  display: inline;
+  clear: both;
+}
+.errorExplanation, #errorExplanation {
+  color: #990000;
+  clear: both;
+}
+#errorExplanation ul li {
+  list-style-type: disc;
+  margin: 0 0 10px 20px;
+}
