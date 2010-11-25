@@ -7,7 +7,7 @@
 <div id="imports_container">
   <h1><strong><%= @country.name %></strong> is eating...</h1>
   <table id="imports">
-    <% @country.imports.each do |entry| %>
+    <% @country.consumptions.each do |entry| %>
       <tr>
         <td>
           <%= link_to entry.food.name, food_path(entry.food) %> from <%= link_to entry.producer.name, countries_path(entry.producer) %> <span class="brand">(<%= entry.brand.name %>)</span>

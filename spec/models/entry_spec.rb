@@ -33,17 +33,15 @@ describe Entry do
   context "when creating a new entry" do
     it "does not create a new food record if that food already exists" do
       existing_food = Factory(:food)
-      attributes = Factory.attributes_for(:entry)
       lambda {
-        Entry.create!("consumer"=>"Afghanistan", "food_attributes"=>{"name"=>existing_food.name}, "brand_attributes"=>{"name"=>"asdf"}, "producer"=>"Afghanistan")
+        Factory(:entry, :food => existing_food)
       }.should_not change(Food, :count)
     end
     
     it "does not create a new brand record if that brand already exists" do
       existing_brand = Factory(:brand)
-      attributes = Factory.attributes_for(:entry)
       lambda {
-        Entry.create!("consumer"=>"Afghanistan", "food_attributes"=>{"name"=>"oranges"}, "brand_attributes"=>{"name"=>existing_brand.name}, "producer"=>"Afghanistan")
+        Factory(:entry, :brand => existing_brand)
       }.should_not change(Brand, :count)
     end
   end

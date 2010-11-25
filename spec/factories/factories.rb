@@ -1,6 +1,6 @@
 Factory.define :entry do |f|
-  f.sequence(:producer) {|n| "producername#{n}" }
-  f.sequence(:consumer) {|n| "consumername#{n}" }
+  f.association :producer, :factory => :country
+  f.association :consumer, :factory => :country
   f.association :food
   f.association :brand
 end
@@ -13,3 +13,6 @@ Factory.define :brand do |f|
   f.sequence(:name) {|n| "brandname#{n}" }
 end
 
+Factory.define :country do |f|
+  f.sequence(:name) {|n| "countryname#{n}" } 
+end
