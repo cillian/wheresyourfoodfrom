@@ -1,14 +1,19 @@
 <div id="left_table_container">
   <h1><strong><%= @country.name %></strong> is eating...</h1>
-  <table id="imports">
-    <% @country.consumptions.each do |entry| %>
-      <tr>
-        <td>
-          <%= link_to entry.food.name, food_path(entry.food) %> from <%= link_to entry.producer.name, countries_path(entry.producer) %> <span class="brand">(<%= entry.brand.name %>)</span>
-        </td>
-      </tr>
-    <% end %>
-  </table>
+  <% if @country.consumptions.any? %>
+    <table id="imports">
+      <% @country.consumptions.each do |entry| %>
+        <tr>
+          <td>
+            <%= link_to entry.food.name, food_path(entry.food) %> from <%= link_to entry.producer.name, countries_path(entry.producer) %> <span class="brand">(<%= entry.brand.name %>)</span>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  <% else %>
+    <p>... <strong>nothing</strong> apparently ;-)</p>
+    <p>Are you from <%= @country.name %>? <%= link_to 'What are you eating?', new_entry_path %></p>
+  <% end %>
 </div>
 
 <div id="right_table_container">
